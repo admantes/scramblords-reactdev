@@ -31,3 +31,79 @@
     transform: rotate(360deg);
   }
 }
+
+
+	.square{
+		background-color:teal;
+		font-size:40px;
+		font-weight:bold;
+		width:20%;
+		height:20%;
+		text-align:center;
+		margin-top:2px;
+		border-radius: 8px;
+		border: 4px solid #693D25;
+		line-height:50px;
+		float: left;
+		margin-left:2px;
+		user-select: none;  
+		cursor: default;
+	}
+	
+	.squareHit{
+		background-color:orange;
+		font-size:40px;
+		font-weight:bold;
+		width:20%;
+		height:20%;
+		text-align:center;
+		margin-top:2px;
+		border-radius: 8px;
+		border: 4px solid red;
+		line-height:50px;
+		float: left;
+		margin-left:2px;
+		user-select: none;  
+		cursor: default;
+	}
+	
+	
+	.square:focus {
+		outline: none;
+	}
+	
+	.dispText{
+		background-color:#6EA498;
+		font-weight:bold;
+		font-size:28px;
+		border-radius: 2px;
+		border: 2px solid #00372B;
+		width:250px;
+		line-height:50px;
+		height:50px;
+		text-align:center;
+	}
+	
+	.dispTextGreen{
+		background-color:green;
+	}
+	.dispTextRed{
+		background-color:red;
+	}
+	/*body {
+	  color: #6699CC;
+	  font-size: 22px;
+	  font-family: "Helvetica Neue";
+	  background: linear-gradient(slategray, aquamarine);
+	  text-align: center;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}*/
+	
+	
+	.board-row:after {
+	  clear: both;
+	  content: "";
+	  display: table;
+	}

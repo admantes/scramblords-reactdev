@@ -102,8 +102,12 @@
 	}*/
 	
 	
-	.board-row:after {
-	  clear: both;
-	  content: "";
-	  display: table;
+	.board-row {	 
+	  content: "";	   
+	}
+	
+	.main-board{
+		display:grid;
+		grid-template-rows: 1fr 1fr 1fr;
+		
 	}

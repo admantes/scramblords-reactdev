@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Typo from 'typo-js';
 
 
-	 var dictionary = require("typo-js"); 
+	//var Typo = require("typo-js");
+	 var dictionary = new Typo("en_US");
 	 var gameTime = 120;
 	 var posArr = ["11","21","31","41","12","22","32","42","13","23","33","43","14","24","34","44"];
-	   
+	    
 	  function Square(props){
       return (
         <div className={props.className} onClick={props.onClick}>         
@@ -20,10 +22,10 @@ import './App.css';
 			<div className="dispText">
 			{props.value}
 			</div>
-		);
+		); 
 		
 	}
-	
+	  
 	function WordList(props){
 		const words = props.words;
 		
@@ -37,7 +39,7 @@ import './App.css';
 		<div className="wordBox">
 			<ul>
 			  {listItems}
-			</ul>
+			</ul>  
 		</div>
 	  ); 
 	 
@@ -260,8 +262,9 @@ import './App.css';
 	
 	
 		checkClick(){
-			 
-			const isCorrect = dictionary.check(this.state.curWord);
+			  
+			let isCorrect = dictionary.check(this.state.curWord);
+			console.log(isCorrect);
 			let arr = this.state.words;
 			let score = this.state.score;
 			//Check if entered text is 3 chars or more
@@ -284,6 +287,7 @@ import './App.css';
 					
 				}else{
 					//alert("Bano");
+					console.log("no words");
 				}
 			}else{
 				console.log("less than 3");
@@ -349,13 +353,13 @@ const arr = this.props.clickArr;
 			  
 			
 		  }
-				
-				
-	
+				  
+				  
+	  
 		 render() {
-    return (
+			return (
 	
-				<div>
+				<div className="main-board">
 					<div className="board-row">
 						{this.renderSquare(0)}
 						{this.renderSquare(1)}

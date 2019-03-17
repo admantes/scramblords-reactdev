@@ -34,15 +34,16 @@
 
 
 	.square{
-		background-color:teal;
-		font-size:40px;
+		background-color:#0F9900;
+		font-size:4em;
 		font-weight:bold;
-		width:20%;
-		height:20%;
+		width:80px;
+		height:80px;
+		color:#96D900;
 		text-align:center;
 		margin-top:2px;
 		border-radius: 8px;
-		border: 4px solid #693D25;
+		border: 4px solid #005952;
 		line-height:50px;
 		float: left;
 		margin-left:2px;
@@ -50,20 +51,8 @@
 		cursor: default;
 	}
 	
-	.squareHit{
-		background-color:orange;
-		font-size:40px;
-		font-weight:bold;
-		width:20%;
-		height:20%;
-		text-align:center;
-		margin-top:2px;
-		border-radius: 8px;
-		border: 4px solid red;
-		line-height:50px;
-		float: left;
-		margin-left:2px;
-		user-select: none;  
+	.hit{
+		background-color:orange;	 
 		cursor: default;
 	}
 	
@@ -76,7 +65,7 @@
 		background-color:#6EA498;
 		font-weight:bold;
 		font-size:28px;
-		border-radius: 2px;
+		border-radius: 10px;
 		border: 2px solid #00372B;
 		width:250px;
 		line-height:50px;
@@ -89,6 +78,9 @@
 	}
 	.dispTextRed{
 		background-color:red;
+	}
+	.gameContainer{
+		display: grid;
 	}
 	/*body {
 	  color: #6699CC;

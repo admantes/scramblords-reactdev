@@ -4,8 +4,18 @@ import './App.css';
 import Typo from 'typo-js';
 
 
-	//var Typo = require("typo-js");
-	 var dictionary = new Typo("en_US");
+  //var Typo = require("typo-js");
+	/*
+	var Typo = function(){
+
+		this.check = function(){
+			return true;
+		}
+	}
+	*/
+	var dictionary = new Typo("en_US",null,null,{dictionaryPath: "./dictionaries"});
+
+	console.log(dictionary.check("dog"));
 	 var gameTime = 120;
 	 var posArr = ["11","21","31","41","12","22","32","42","13","23","33","43","14","24","34","44"];
 	    
@@ -121,13 +131,13 @@ import Typo from 'typo-js';
 				curChar: "X",
 				charList: this.generateNewChars(),
 				curWord: "",
-				words: Array(),
+				words: [],
 				score: 0,
 				textBoxClass: "",
 				squareClass: "square",
 				lastClicked: -1,
-				clickedArr: Array(),
-				neighbors: Array(),
+				clickedArr: [],
+				neighbors: [],
 				clickStateArr: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 				
 				
@@ -200,9 +210,9 @@ import Typo from 'typo-js';
 		
 		resetClickParams(){
 			this.setState({
-					neighbors: Array(),
+					neighbors: [],
 					lastClicked: -1	,
-					clickedArr: Array(),
+					clickedArr: [],
 					curWord: "",
 					curChar: "",
 					squareClass: "square",
@@ -214,12 +224,12 @@ import Typo from 'typo-js';
 			//5431
 			
 			//var mv:MovieClip = objArr[_num - 1] as MovieClip;
-			var neighborArr =  Array();
+			var neighborArr = [];
 			
 			var xpos = posArr[_num].substr(0,1);
 			var ypos = posArr[_num].substr(1,1)	;
 			 			 
-			var tmArr:Array = [-1,1,-3,3,-4,4,-5,5];
+			var tmArr = [-1,1,-3,3,-4,4,-5,5];
 			 			
 			if (xpos == 1) { // LEFT 
 				 tmArr[0] = 0;
@@ -264,7 +274,7 @@ import Typo from 'typo-js';
 		checkClick(){
 			  
 			let isCorrect = dictionary.check(this.state.curWord);
-			console.log(isCorrect);
+			console.log(this.state.curWord);
 			let arr = this.state.words;
 			let score = this.state.score;
 			//Check if entered text is 3 chars or more
@@ -305,7 +315,7 @@ import Typo from 'typo-js';
 		
 		render() {
 			return (
-			<div>
+			<div className="gameContainer">
 				<TextDisplay value={this.state.curWord} />
 				<Timer startTime={gameTime}/>				
 				<ScoreBox score={this.state.score} className={this.state.textBoxClass}/> 
@@ -342,7 +352,7 @@ const arr = this.props.clickArr;
 			}else{
 				return(
 				<Square
-				curVal={this.props.charlist[i]} className="squareHit"
+				curVal={this.props.charlist[i]} className="square hit"
 				onClick={() => this.props.onClick(i)}
 			  />
 			  );

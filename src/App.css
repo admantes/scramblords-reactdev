@@ -36,9 +36,8 @@
 
 body {
   display: flex;
-  background-color: black;
-  max-width: 1200px;
-  width: 900px;
+  background-color: #12423e;
+  box-sizing: border-box;
   justify-content: center;
   font-family: "Lilita One", cursive;
 }
@@ -47,6 +46,12 @@ body {
   cursor: default;
 }
 
+.timer-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .timerLabel {
   font-size: 2em;
   color: #fc9713;
@@ -90,14 +95,22 @@ body {
   background-color: red;
 }
 .gameContainer {
+  position: relative;
   display: grid;
+  min-width: 400px;
+  height: 100vh;
   grid-template-rows: 50px 3fr 4fr 1fr;
   background-image: linear-gradient(#ffffff, #006a62);
 }
 
 .checkButton {
-  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  width: 95%;
   height: 60px;
+ 
   color: white;
   border-radius: 20px;
   background: rgb(71, 226, 71);
@@ -130,20 +143,24 @@ body {
 }
 
 .board-row {
-  content: "";
+  width: 100%;
 }
 
 .main-board {
+  margin: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+   
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
 }
 
 .square {
   background-color: #0f9900;
   font-size: 3em;
   font-weight: bold;
-  width: 60px;
-  height: 60px;
+  min-width: 80px;
+  min-height: 70px;
   color: #97e18f;
   text-align: center;
   margin-top: 2px;

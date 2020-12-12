@@ -322,7 +322,7 @@ class Game extends React.Component {
       <div className="gameContainer">
         <GameTitle />
         <div className="gameInfo">
-          <div>
+          <div className="timer-wrapper">
             <Timer startTime={gameTime} />
             <ScoreBox
               score={this.state.score}
